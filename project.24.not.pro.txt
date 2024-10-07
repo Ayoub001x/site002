@@ -1,0 +1,29 @@
+thetasks = input('Enter your tasks for today separated by a comma: ').split(', ')
+done = []
+ongoing = []
+for tasks in thetasks:
+    print('\n'+tasks+'\n')
+    finished = input(f'Did you finish{tasks} alredy? ').lower()
+    if (finished == 'yes'):
+        done.append(tasks)
+        print('Nice Job')
+    elif (finished == 'no'):
+        ongoing.append(tasks)
+        print('Try not to put it off')
+    else:
+        print('Error in sintex')
+        print('It should be the answer,(Yes/No) ')
+    print('_ _ _ _ _ _ _ _')
+progress = input('Do you want to see your today is progress?(Yes,No)').lower()
+print(len(done))
+print(len(thetasks))
+success_rate = (len(thetasks) % len(done)) * 100
+if progress == 'yes':
+    print('***** Done Tasks *****')
+    print(done)
+    print('***** Ongoing Tasks *****')
+    print(ongoing)
+    print(f'Success Rate {success_rate}')
+else:
+    print("Ok")
+    
